@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        :root {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 32px;
+        }
+
+        *, *::before, *::after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100dvh;            
+            border: solid;
+            display: grid;
+            place-content: center;
+        }
+
+        .boton {
+            position: relative;
+            color: darkblue;
+            border: solid 5px currentColor;
+            background-color: lightblue;
+            font-weight: bold;
+            padding: 1rem 2rem;
+            border-radius: 2rem; 
+            text-transform: uppercase;
+        }
+
+        .boton::before, .boton::after {
+            content: '';
+            position: absolute;
+            border-radius: inherit;
+            display: inline-block;
+            border: solid 5px orange;
+            inset: 0;
+            margin: auto;
+        }
+
+
+        .boton::before {
+            width: calc(100% - 15px);
+            height: calc(100% - 15px);
+        }
+
+        .boton::after {
+            border-color: chartreuse;
+            width: calc(100% - 40px);
+            height: calc(100% - 40px);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="boton">Abrir</div>
+</body>
+</html>

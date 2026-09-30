@@ -1,0 +1,31 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 32px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100dvh;
+}
+
+ol {
+  font-size: 1rem;
+  color: red;
+  list-style-type: upper-roman;
+  margin-left: 50px;
+}
+
+ol ul {
+  font-size: 0.75em;
+  color: green;
+}
+
+ul ol {
+  font-size: 0.75em;
+  color: blue;
+}
