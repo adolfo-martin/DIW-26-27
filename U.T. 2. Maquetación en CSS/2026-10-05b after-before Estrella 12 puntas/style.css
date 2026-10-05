@@ -1,0 +1,44 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100dvh;
+  display: grid;
+  place-content: center;
+}
+
+.estrella {
+  width: 125px;
+  height: 125px;
+  border: solid 10px blue;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.estrella::before,
+.estrella::after {
+  content: "";
+  position: absolute;
+  border: inherit;
+  width: inherit;
+  height: inherit;
+}
+
+.estrella::before {
+  rotate: 30deg;
+}
+
+.estrella::after {
+  rotate: 60deg;
+}

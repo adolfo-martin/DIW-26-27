@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      :root {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 24px; /* 1 rem */
+      }
+
+      *,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100dvh;
+      }
+
+      .boton-mensajes {
+        position: relative;
+        background-color: grey;
+        padding: 0.5rem 1rem;
+        border-radius: 2rem;
+        display: inline;
+        left: 50%;
+      }
+
+      .boton-mensajes::after {
+        content: attr(data-mensajes-pendientes);
+        position: absolute;
+        top: -30%;
+        right: -10%;
+        background-color: red;
+        color: white;
+        border-radius: 50%;
+        min-width: 1.5rem;
+        min-height: 1.5rem;
+        aspect-ratio: 1;
+        padding: 0.25rem;
+        display: inline-grid;
+        place-content: center;
+      }
+    </style>
+
+    <script type="module">
+      let contadorMensajesPendientes = 1;
+      const nDiv = document.getElementById("eDivMensajes");
+
+      /* 
+        Ejecuta indefinidamente una función.
+        El primer argumento es la función.
+        El segundo argumento son los milisegundos entre ejecuciones.
+      */
+      //   setInterval(function cambiarNumero() {
+      //     contadorMensajesPendientes += 1;
+      //     const nDiv = document.getElementById("eDivMensajes");
+      //     nDiv.setAttribute(
+      //       "data-mensajes-pendientes",
+      //       contadorMensajesPendientes,
+      //     );
+      //   }, 1000);
+
+      setInterval(
+        () =>
+          nDiv.setAttribute(
+            "data-mensajes-pendientes",
+            (contadorMensajesPendientes += 1),
+          ),
+        1000,
+      );
+    </script>
+  </head>
+  <body>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Placeat architecto totam sit quam?</p>
+    <p>Placeat recusandae quos est veniam!</p>
+    <p>Eos vel provident dignissimos error!</p>
+    <p>Possimus accusantium nostrum voluptate deleniti!</p>
+    <p>Ipsa hic quos dignissimos alias.</p>
+    <p>Nam obcaecati modi sed tempora!</p>
+    <p>Voluptatem maxime deserunt minus fuga.</p>
+    <p>Vel porro quidem eos sed!</p>
+    <p>Dicta doloribus tempora suscipit est.</p>
+
+    <div id="eDivMensajes" data-mensajes-pendientes="0" class="boton-mensajes">
+      Ver mensajes
+    </div>
+
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Placeat architecto totam sit quam?</p>
+    <p>Placeat recusandae quos est veniam!</p>
+    <p>Eos vel provident dignissimos error!</p>
+    <p>Possimus accusantium nostrum voluptate deleniti!</p>
+    <p>Ipsa hic quos dignissimos alias.</p>
+    <p>Nam obcaecati modi sed tempora!</p>
+    <p>Voluptatem maxime deserunt minus fuga.</p>
+    <p>Vel porro quidem eos sed!</p>
+    <p>Dicta doloribus tempora suscipit est.</p>
+  </body>
+</html>
