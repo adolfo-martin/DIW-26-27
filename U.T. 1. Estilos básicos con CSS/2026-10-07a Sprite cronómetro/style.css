@@ -1,0 +1,29 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  /* variables CSS */
+  --height: 90px;
+  --width: calc(900px / 10);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100dvh;
+}
+
+.numero {
+  width: var(--width);
+  height: var(--height);
+  border: solid 2px red;
+  background-image: url(./numeros.png);
+  background-repeat: no-repeat;
+  /* background-position-x: calc(var(--width) * -9); */
+  /* background-position-x: -810px; */
+}
