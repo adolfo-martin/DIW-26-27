@@ -1,0 +1,68 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  --green-50: #e8f5e9;
+  --green-100: #c8e6c9;
+  --green-200: #a5d6a7;
+  --green-300: #81c784;
+  --green-400: #66bb6a;
+  --green-500: #4caf50;
+  --green-600: #43a047;
+  --green-700: #388e3c;
+  --green-800: #2e7d32;
+  --green-900: #1b5e20; 
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: var(--green-900);
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+nav {
+  background-color: var(--green-700);
+  color: white;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  padding: 0.25rem;
+  gap: 0.25rem;
+}
+
+li {
+  background-color: #c8e6c9;
+  color: var(--green-900);
+  flex-grow: 1;
+  /* flex-shrink: 0; */
+  flex-basis: 0;
+  text-align: center;
+}
+
+main {
+  /* Del espacio sobrante en el padre, que trozo me quedo yo */
+  flex-grow: 5;
+  overflow-y: scroll;
+}
+
+footer {
+  background-color: var(--green-900);
+  color: white;
+  text-align: center;
+}

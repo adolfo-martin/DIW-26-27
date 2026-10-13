@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+section {
+    border: solid;
+    height: 400px;
+    margin: 25px;
+
+    display: flex;
+    flex-direction: row;
+    /* distribución dirección principal */
+    justify-content: space-evenly;
+    /* distribución dirección secundaria */
+    align-items: center;
+}
+
+article {
+    border: solid 2px red;
+}
+
+article:first-child {
+    align-self: flex-start;
+}
+
+article:last-child {
+    align-self: flex-end;
+}
+
+article:nth-child(2) {
+    align-self: center;
+    font-size: 2rem;
+}
+
+article:nth-child(3) {
+    align-self: center;
+}
