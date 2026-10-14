@@ -1,0 +1,55 @@
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    --orange-50: #fff7ed;
+    --orange-100: #ffedd5;
+    --orange-200: #fed7aa;
+    --orange-300: #fdba74;
+    --orange-400: #fb923c;
+    --orange-500: #f97316;
+    --orange-600: #ea580c;
+    --orange-700: #c2410c;
+    --orange-800: #9a3412;
+    --orange-900: #7c2d12;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100dvh;
+}
+
+header {
+    background-color: var(--orange-900);
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.menu {
+    background-color: var(--orange-600);
+    color: white;
+    display: inline-block;
+    height: 100dvh;
+    
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: currentColor;
+    }
+}

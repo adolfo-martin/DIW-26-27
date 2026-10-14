@@ -49,9 +49,10 @@ ul {
 li {
   background-color: #c8e6c9;
   color: var(--green-900);
-  flex-grow: 1;
-  /* flex-shrink: 0; */
-  flex-basis: 0;
+  /* flex: 1 0 0; */
+  flex-basis: 0; /* El el grosor en la dirección principal. No hay que usar width o height (lo que corresponda) */
+  flex-grow: 1; /* Cómo se reparte el espacio sobrante */
+  /* flex-shrink: 0; */ /* Cuando falta espacio, cómo se le quita a cada etiqueta */
   text-align: center;
 }
 
