@@ -27,3 +27,42 @@ div:nth-child(2) {
   background-color: blue;
   grid-column: span 2;
 }
+
+div:nth-child(3) {
+  background-color: yellow;
+  grid-column: span 4;
+}
+
+div:nth-child(4) {
+  background-color: grey;
+}
+
+div:nth-child(5) {
+  background-color: green;
+  grid-row: span 2;
+}
+
+div:nth-child(6) {
+  background-color: brown;
+  grid-row: span 2;
+}
+
+div:nth-child(7) {
+  background-color: chocolate;
+  grid-row: 4 / span 2;
+}
+
+div:nth-child(8) {
+  background-color: black;
+  grid-row: 5;
+}
+
+div:nth-child(9) {
+  background-color: olive;
+  grid-row: 5;
+}
+
+div:nth-child(10) {
+  background-color: cyan;
+  grid-column: span 3;
+}
