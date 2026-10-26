@@ -1,0 +1,13 @@
+@media screen and (min-width: 768px) {
+    body {
+        grid-template-areas: 
+            "resultado  resultado  resultado  resultado   resultado"
+            "seis       siete      ocho       nueve       cero "
+            "uno        dos        tres       cuatro      cinco"
+            "suma       suma       resta      multiplica  divide"
+            "suma       suma       igual      igual       igual"
+        ;
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: repeat(5, 1fr);
+    }
+}

@@ -1,0 +1,127 @@
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100dvh;
+    background-color: chartreuse;
+    display: grid;
+    grid-template-areas:
+        "resultado  resultado  resultado  resultado"
+        "siete      ocho       nueve      resta"
+        "cuatro     cinco      seis       suma"
+        "uno        dos        tres       multiplica"
+        "cero       igual      igual      divide"
+    ;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 0.5rem;
+    padding: 0.5rem;
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.numero {
+    background-color: burlywood;
+
+    &::before {
+        content: attr(data-numero);
+        height: 100%;
+        display: grid;
+        place-items: center;
+    }
+
+    &:nth-child(1) {
+        grid-area: cero;
+    }
+
+    &:nth-child(2) {
+        grid-area: uno;
+    }
+
+    &:nth-child(3) {
+        grid-area: dos;
+    }
+
+    &:nth-child(4) {
+        grid-area: tres;
+    }
+
+    &:nth-child(5) {
+        grid-area: cuatro;
+    }
+
+    &:nth-child(6) {
+        grid-area: cinco;
+    }
+
+    &:nth-child(7) {
+        grid-area: seis;
+    }
+
+    &:nth-child(8) {
+        grid-area: siete;
+    }
+
+    &:nth-child(9) {
+        grid-area: ocho;
+    }
+
+    &:nth-child(10) {
+        grid-area: nueve;
+    }
+}
+
+.operador {
+    background-color: chocolate;
+
+    &::before {
+        content: attr(data-operador);
+        height: 100%;
+        display: grid;
+        place-items: center;
+    }
+
+    &:nth-child(11) {
+        grid-area: suma;
+    }
+    
+    &:nth-child(12) {
+        grid-area: resta;
+    }
+    
+    &:nth-child(13) {
+        grid-area: multiplica;
+    }
+    
+    &:nth-child(14) {
+        grid-area: divide;
+    }
+    
+    &:nth-child(15) {
+        grid-area: igual;
+    }
+}
+
+    
+div:nth-child(16) {
+    background-color: white;
+    color: black;
+    grid-area: resultado;
+    position: relative;
+    
+    &::before {
+        content: attr(data-resultado);
+        position: absolute;
+        width: 100%;
+        text-align: right;
+    }
+}
