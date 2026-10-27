@@ -1,0 +1,61 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100dvh;
+    place-items: center;
+    place-content: center;
+}
+
+.running {
+    animation-play-state: running !important;
+    display: block !important;
+}
+
+.spinner {
+    display: none;
+    width: 300px;
+    aspect-ratio: 1;
+    /* border: solid 20px transparent; */
+    border-top: solid 20px red;
+    border-radius: 50%;
+    position: relative;
+    animation: spin 2s linear infinite;
+    animation-play-state: paused;
+
+
+    &::before, &::after {
+        content: "";
+        position: absolute;
+        display: inline-block;
+        aspect-ratio: 1;
+        border-radius: inherit;
+        inset: 0;
+        margin: auto;
+    }
+
+    &::before {
+        width: 200px;
+        border-top: solid 20px green;
+        animation: inherit;
+        animation-direction: reverse;
+        animation-duration: 1s;
+    }
+
+    &::after {
+        width: 100px;
+        border-top: solid 20px blue;
+    }
+}
+
+@keyframes spin {
+    from {
+        rotate: 0turn;
+    }
+    to {
+        rotate: 1turn;
+    }
+}

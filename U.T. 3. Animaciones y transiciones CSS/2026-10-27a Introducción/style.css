@@ -1,0 +1,93 @@
+body {
+    background-color: black;
+    overflow: hidden;
+}
+
+.cuadrado-azul {
+    background-color: blue;
+    width: 200px;
+    aspect-ratio: 1;
+    position: absolute;
+    animation-name: movimiento-cuadrado-azul;
+    animation-duration: 3000ms;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+}
+
+@keyframes movimiento-cuadrado-azul {
+    from {
+        left: 400px;
+        top: 50px;
+    }
+    to {
+        left: 1800px;
+        top: 700px;
+    }
+}
+
+.cuadrado-amarillo {
+    background-color: yellow;
+    width: 150px;
+    aspect-ratio: 1;
+    position: absolute;
+    animation-name: movimiento-cuadrado-azul, cambio-color;
+    animation-duration: 3000ms, 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-direction: alternate;
+    animation-iteration-count: infinite, 3;
+    animation-delay: 1s;
+    rotate: 1turn;
+    z-index: 0;
+}
+
+@keyframes cambio-color {
+    from {
+        background-color: chartreuse;
+    }
+    to {
+        background-color: brown;
+    }
+}
+
+.circulo-rojo {
+    background-color: red;
+    width: 100px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: absolute;
+    /* animation-name: movimiento-circulo-rojo;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; */
+    animation: movimiento-circulo-rojo 4s linear 0s infinite normal both;
+}
+
+@keyframes movimiento-circulo-rojo {
+    0% {
+        left: 10%;
+        top: 10%;
+        background-color: red;
+    }
+    25% {
+        left: calc(100dvw - 10% - 100px);
+        top: 10%;
+    }
+    50% {
+        left: calc(100dvw - 10% - 100px);
+        top: calc(100dvh - 10% - 100px);
+        background-color: yellow;
+    }
+    75% {
+        left: 10%;
+        top: calc(100dvh - 10% - 100px);
+    }
+    100% {
+        left: 10%;
+        top: 10%;
+        background-color: red;
+    }
+}
