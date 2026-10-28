@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100dvh;
+}
+
+@media screen {
+    :root {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    body {
+        background: url(./halloween.jfif);
+        color: white;
+    }
+}
+
+@media print {
+    :root {
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    @page {
+        margin: 25mm 30mm 20mm 30mm;
+
+        @bottom-center {
+            content: counter(page);
+        }
+    }
+
+    @page :right {
+        @top-center {
+            content: "Sábado 31 de Octubre";
+        }
+    }
+
+    @page :left {
+        @top-center {
+            content: "Halloween";
+        }
+    }
+
+    body {
+        background-color: orange;
+        color: black;
+        margin: 0;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    p {
+        text-align: justify;
+    }
+}
