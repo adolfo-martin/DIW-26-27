@@ -1,0 +1,123 @@
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    --blue-100: #cfdfe4;
+    --blue-500: #8b8bde;
+    --blue-950: #01013d;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* mobile first */
+/* extra-small (xs) o mobile */
+
+.header-app {
+    background-color: var(--blue-950);
+    color: white;
+    padding: 0.5rem;
+    display: flex;
+    /* justify-content: ;  direccion principal */
+    /* align-items: ;      direccion secundaria */
+    align-items: center;
+
+    .title {
+        flex: 1 1 0;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .menu-button {
+        border: solid 1px red;
+    }
+
+    .login-button {
+        background-color: transparent;
+        border: none;
+        border: solid 1px red;
+        
+        &::before {
+            content: attr(data-shortname);
+            display: inline-block;
+            /* width: 100px;
+            aspect-ratio: 1; */
+            padding: 0.5rem;
+            background-color: white;
+            color: var(--blue-950);
+            border-radius: 50%;
+        }
+    }
+}
+
+.nav-app {
+    display: none;
+}
+
+.main-app {
+    background-color: var(--blue-100);
+    flex: 1 1 0;
+}
+
+.footer-app {
+    background-color: var(--blue-950);
+    color: white;
+}
+
+.ads-left, .ads-right {
+    display: none;
+}
+
+/* medium (md) o tableta */
+@media screen and (width >= 768px) {
+    .header-app .login-button::before {
+        content: attr(data-longname);
+        border-radius: 1rem;
+    }
+
+    aside.ads-left, aside.ads-right {
+        display: block;
+    }
+}
+
+/* large (lg) o monitor */
+@media screen and (width >= 1280px) {
+    body {
+        display: grid;
+        grid-template-areas: 
+            "ads-left  header  ads-right"
+            "ads-left  main    ads-right"
+            "ads-left  footer  ads-right"
+        ;
+        grid-template-columns: 450px 1fr 450px;
+        grid-template-rows: auto 1fr auto;
+    }
+
+    .header-app {
+        grid-area: header;
+    }
+
+    .main-app {
+        grid-area: main;
+    }
+
+    .footer-app {
+        grid-area: footer;
+    }
+
+    .ads-left {
+        grid-area: ads-left;
+    }
+
+    .ads-right {
+        grid-area: ads-right;
+    }
+}
