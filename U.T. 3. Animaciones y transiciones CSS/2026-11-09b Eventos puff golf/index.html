@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script type="module">
+        document.querySelector('.bola-golf').addEventListener('animationend', e => {
+            if (e.animationName === 'movimiento-bola') {
+                document.querySelector('.bola-golf').style.animationPlayState = 'running';
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="palo-golf"></div>
+    <div class="bola-golf"></div>
+    <div class="hoyo-golf"></div>
+</body>
+</html>
