@@ -1,0 +1,50 @@
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100dvh;
+    display: grid;
+    place-items: center;
+}
+
+.person {
+    background-color: lightgrey;
+    width: 200px;
+    height: 300px;
+    position: relative;
+    border-radius: 1rem;
+    box-shadow: 10px 10px 20px grey;
+
+    &::before {
+        content: attr(data-name);
+        position: absolute;
+        left: 50%;
+        translate: -50%;
+        width: max-content;
+        font-size: 1.5rem;
+        font-weight: bold;
+        top: 10%;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        translate: -50%;
+        bottom: 15%;
+        width: 75%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-image: var(--image);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+}
