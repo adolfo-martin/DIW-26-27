@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p {
+    display: none;
+    border-left: solid;
+    border-right: solid;
+    border-bottom: solid;
+}
+
+.contenedor-titulos {
+    display: flex;
+
+    h3 {
+        padding: 0.5rem;
+        border-top: solid;
+        border-left: solid;
+        border-bottom: solid;
+
+        &:last-child {
+            flex-grow: 1;
+            border: none;
+            border-left: solid;
+            border-bottom: solid;
+        }
+
+        &:has(+label[for=tRadvmware]):has(body:has(input[id=tRadvmware]:checked)) {
+            border-bottom: none;
+        }
+    }
+}
+
+input[type=radio] {
+    display: none;
+
+    &:checked + p {
+        display: block;
+    }
+}
+    
